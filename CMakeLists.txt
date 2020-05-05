@@ -3,6 +3,12 @@
 
 cmake_minimum_required(VERSION 2.8.8)
 
+# Unset any inherited CXX flags
+# Google Test uses some features that disagree with -pedantic
+set(CMAKE_CXX_FLAGS )
+set(CMAKE_CXX_FLAGS_DEBUG )
+set(CMAKE_CXX_FLAGS_RELEASE )
+
 if (POLICY CMP0048)
   cmake_policy(SET CMP0048 NEW)
 endif (POLICY CMP0048)
